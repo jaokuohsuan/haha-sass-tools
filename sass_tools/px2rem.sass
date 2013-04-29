@@ -1,0 +1,20 @@
+//rem
+@function rem($px-values)
+  $baseline-px: 16px
+  $baseline-rem: $baseline-px/1rem
+  $rem-values: null
+  
+  @each $value in $px-values
+  
+    // @if type-of($value) != "number"
+    //   $value: unquote($value)
+
+    @if unit($value)=="px"
+      $value: $value/$baseline-rem
+      $rem-values: append($rem-values,$value)
+    @else 
+      @warn "unit not px"
+      $rem-values: append($rem-values, $value)
+     
+
+  @return $rem-values
