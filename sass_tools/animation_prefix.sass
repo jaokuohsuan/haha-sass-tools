@@ -1,0 +1,11 @@
+//animation_keyframes_prefix
+=animation($name: fadeIn, $duration: 1s, $delay: .2s, $function: ease, $mode: both)
+  +experimental(animation, $name $duration $delay $function $mode)
+
+=keyframes($keyframes-name)
+  @-moz-keyframes #{$keyframes-name}
+    @content
+  @-webkit-keyframes #{$keyframes-name}
+    @content
+  @-ms-keyframes #{$keyframes-name}
+    @content
