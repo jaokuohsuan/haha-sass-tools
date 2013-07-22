@@ -14,7 +14,6 @@
   @for $i from 1 through $total_list
     $temp_a: nth($animations,$i)
     $temp_l: length($temp_a)
-    //$temp_d: $defualt_length - $temp_l
     @if $temp_l< $defualt_length
       @for $k from ($temp_l+1) through $defualt_length
         $temp_a: append($temp_a,nth($defualt_v,$k),"space")
